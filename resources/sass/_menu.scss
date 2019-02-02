@@ -1,0 +1,182 @@
+
+@mixin rotateAnim {
+    transition: transform 0.5s;
+};
+
+@mixin colorAnim {
+    transition: color 0.1s;
+}
+
+@mixin small {
+    @media (min-width: 576px) { 
+        @content
+     }
+};
+
+@mixin medium {
+    @media (min-width: 768px) {
+        @content
+    }
+};
+
+@mixin large {
+    @media (min-width: 992px){
+        @content
+    }
+};
+.menu-button {
+    position: fixed;
+    right: 10px;
+    cursor: pointer;
+    top: 10px;
+    z-index: 99;
+    .menu-btn {
+        width: 20px;
+        height: 2px;
+        background-color: $text-color;
+        margin: 5px;
+        cursor: pointer;
+        @include rotateAnim();
+    }
+    &.opened {
+        :nth-child(1) {
+            transform: rotate(45deg) translate(4px, 3px);
+        }
+        :nth-child(2) {
+            opacity: 0;
+        }
+
+        :nth-child(3) {
+            transform: rotate(-45deg) translate(7px, -6px);
+        }
+    }
+}
+
+.menu {
+    position: fixed;
+    z-index: 2;
+    visibility: hidden;
+    left: 0;
+    width: 100%;
+    margin:0;
+    padding:0;
+    &.show {
+        visibility: visible;
+    }
+    .menu-links {
+        transform: translate3d(1000px,0px,0px);
+        display: flex;
+        flex-direction: column;
+        margin: 0px;
+        padding: 0px;
+        background-color: $menu-links-background;
+        right: 0;
+        float:right;
+        position: relative;
+        width: 100%;
+        text-align: center;
+        overflow: hidden;
+        height: 100vh;
+        justify-content: center;
+        @include rotateAnim();
+
+        .menu-link {
+            list-style: none;
+            margin-bottom: 10px;
+            margin-top: 10px;
+
+            a {
+                text-decoration: none;
+                color: $text-color;
+                &:hover {
+                    color: $secondary-text-color;
+                }
+            }
+
+            
+        }
+
+        &.show {
+            transform: translate3d(0,0,0);
+        }
+    }
+
+    .menu-photo {
+        transform: translate3d(-1000px,0px,0px);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: $photo-background;
+        position: relative;
+        left: 0px;
+        float:left;
+        width: 100%;
+        margin: 0;
+        @include rotateAnim();
+
+        &.show {
+            transform: translate3d(0,0,0);
+        }
+
+        
+    }
+}
+
+
+@include small {
+   .menu {
+       .menu-photo {
+           height: 20vh;
+       }
+       .menu-links {
+        height: 100%;
+        float: auto;
+        justify-content: start;
+        padding-top: 20%;
+       }
+       .profile-img {
+        width: 200px;
+        height: 200px;
+    }
+   }
+}
+@include medium {
+    .menu {
+        .menu-photo {
+            height: 100vh;
+        }
+        .menu-links {
+            height: 100%;
+            padding-top: 0px;
+            justify-content: center;
+        }
+        .profile-img {
+            width: 256px;
+            height: 256px;
+        }
+    }
+}
+@include large {
+    .menu {
+        .menu-photo {
+            height: 100vh;
+        }
+        .menu-links {
+            height: 100%;
+            padding-top: 0px;
+            justify-content: center;
+        }
+    }
+
+    .profile-img {
+        width: 256px;
+        height: 256px;
+    }
+}
+
+.profile-img {
+    border-radius: 50%;
+    width: 256px;
+    height: 256px;
+}

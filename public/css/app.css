@@ -1,0 +1,265 @@
+.menu-button {
+  position: fixed;
+  right: 10px;
+  cursor: pointer;
+  top: 10px;
+  z-index: 99;
+}
+
+.menu-button .menu-btn {
+  width: 20px;
+  height: 2px;
+  background-color: white;
+  margin: 5px;
+  cursor: pointer;
+  transition: -webkit-transform 0.5s;
+  transition: transform 0.5s;
+  transition: transform 0.5s, -webkit-transform 0.5s;
+}
+
+.menu-button.opened :nth-child(1) {
+  -webkit-transform: rotate(45deg) translate(4px, 3px);
+          transform: rotate(45deg) translate(4px, 3px);
+}
+
+.menu-button.opened :nth-child(2) {
+  opacity: 0;
+}
+
+.menu-button.opened :nth-child(3) {
+  -webkit-transform: rotate(-45deg) translate(7px, -6px);
+          transform: rotate(-45deg) translate(7px, -6px);
+}
+
+.menu {
+  position: fixed;
+  z-index: 2;
+  visibility: hidden;
+  left: 0;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.menu.show {
+  visibility: visible;
+}
+
+.menu .menu-links {
+  -webkit-transform: translate3d(1000px, 0px, 0px);
+          transform: translate3d(1000px, 0px, 0px);
+  display: flex;
+  flex-direction: column;
+  margin: 0px;
+  padding: 0px;
+  background-color: rgba(50, 57, 68, 0.8);
+  right: 0;
+  float: right;
+  position: relative;
+  width: 100%;
+  text-align: center;
+  overflow: hidden;
+  height: 100vh;
+  justify-content: center;
+  transition: -webkit-transform 0.5s;
+  transition: transform 0.5s;
+  transition: transform 0.5s, -webkit-transform 0.5s;
+}
+
+.menu .menu-links .menu-link {
+  list-style: none;
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+
+.menu .menu-links .menu-link a {
+  text-decoration: none;
+  color: white;
+}
+
+.menu .menu-links .menu-link a:hover {
+  color: #ffd32a;
+}
+
+.menu .menu-links.show {
+  -webkit-transform: translate3d(0, 0, 0);
+          transform: translate3d(0, 0, 0);
+}
+
+.menu .menu-photo {
+  -webkit-transform: translate3d(-1000px, 0px, 0px);
+          transform: translate3d(-1000px, 0px, 0px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(30, 39, 46, 0.8);
+  position: relative;
+  left: 0px;
+  float: left;
+  width: 100%;
+  margin: 0;
+  transition: -webkit-transform 0.5s;
+  transition: transform 0.5s;
+  transition: transform 0.5s, -webkit-transform 0.5s;
+}
+
+.menu .menu-photo.show {
+  -webkit-transform: translate3d(0, 0, 0);
+          transform: translate3d(0, 0, 0);
+}
+
+@media (min-width: 576px) {
+  .menu .menu-photo {
+    height: 20vh;
+  }
+
+  .menu .menu-links {
+    height: 100%;
+    float: auto;
+    justify-content: start;
+    padding-top: 20%;
+  }
+
+  .menu .profile-img {
+    width: 200px;
+    height: 200px;
+  }
+}
+
+@media (min-width: 768px) {
+  .menu .menu-photo {
+    height: 100vh;
+  }
+
+  .menu .menu-links {
+    height: 100%;
+    padding-top: 0px;
+    justify-content: center;
+  }
+
+  .menu .profile-img {
+    width: 256px;
+    height: 256px;
+  }
+}
+
+@media (min-width: 992px) {
+  .menu .menu-photo {
+    height: 100vh;
+  }
+
+  .menu .menu-links {
+    height: 100%;
+    padding-top: 0px;
+    justify-content: center;
+  }
+
+  .profile-img {
+    width: 256px;
+    height: 256px;
+  }
+}
+
+.profile-img {
+  border-radius: 50%;
+  width: 256px;
+  height: 256px;
+}
+
+.dash-div {
+  position: relative;
+  top: 20vh;
+  width: 100%;
+}
+
+.second-name {
+  color: #ffd32a;
+}
+
+.display-5 {
+  font-size: 1.5rem;
+  margin: 1rem 0;
+}
+
+.display-6 {
+  font-size: 1.2rem;
+}
+
+.display-7 {
+  font-size: 1.1rem;
+}
+
+.links {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.links .link {
+  margin-right: 1rem;
+  color: white;
+  font-size: 2rem;
+}
+
+.links .link:hover {
+  color: #ffd32a;
+}
+
+.link {
+  cursor: pointer;
+}
+
+#image {
+  display: none;
+}
+
+* {
+  box-sizing: border-box;
+  transition: color 0.1s;
+  font-family: "Slabo 27px", serif;
+}
+
+#app,
+body,
+html,
+.menu {
+  height: 100%;
+  margin: 0px;
+  padding: 0px;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+#app {
+  color: white;
+}
+
+.background {
+  position: fixed;
+  background: url(/images/html.jpg?51690be104661e7bcb888a173e8536a8) center center no-repeat;
+  background-size: cover;
+  height: 100%;
+  width: 100%;
+  z-index: -2;
+}
+
+.background::after {
+  content: "";
+  position: absolute;
+  background-color: rgba(50, 57, 68, 0.8);
+  height: 100%;
+  width: 100%;
+  z-index: -2;
+}
+
+.dark-color {
+  color: black;
+}
+
+.code-lang {
+  margin-right: 2px;
+}
+

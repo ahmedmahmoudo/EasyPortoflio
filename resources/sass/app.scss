@@ -1,0 +1,64 @@
+
+$primary-color: #353b48;
+$secondary-color: #2f3640;
+$primary-dark-color: #1e272e;
+
+
+$secondary-background: rgba(mix($primary-color, $secondary-color), 0.8);
+$menu-links-background: rgba(mix($primary-color, $secondary-background, 1),0.8);
+$photo-background: rgba(mix($primary-color, $primary-dark-color, 0), 0.8);
+
+$text-color: white;
+$secondary-text-color: #ffd32a;
+$dark-color: black;
+
+$background-image: url(../imgs/html.jpg);
+
+@import './_menu';
+@import './dash';
+
+* {
+    box-sizing: border-box;
+    @include colorAnim();
+    font-family: 'Slabo 27px', serif;
+}
+
+#app, body, html, .menu {
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    overflow-x: hidden;
+
+}
+#app {
+    color: $text-color;
+    
+}
+
+.background {
+    position:fixed;
+    background: $background-image center center no-repeat;
+    background-size: cover;
+    height: 100%;
+    width: 100%;
+    z-index: -2;
+    &::after {
+        content: '';
+        position: absolute;
+        background-color: $secondary-background;
+        height: 100%;
+        width: 100%;
+        z-index: -2;
+    }
+}
+
+.dark-color {
+    color: $dark-color;
+}
+
+.code-lang {
+    margin-right: 2px;
+}

@@ -1,0 +1,46 @@
+
+
+.dash-div {
+    position: relative;
+    top: 20vh;
+    width: 100%;
+}
+.second-name {
+    color: $secondary-text-color;
+}
+
+.display-5 {
+    font-size: 1.5rem;
+    margin: 1rem 0;
+}
+
+.display-6 {
+    font-size: 1.2rem;
+}
+
+.display-7 {
+    font-size: 1.1rem;
+}
+
+.links {
+    display:flex;
+    flex-direction: row;
+    align-items: center;
+    .link {
+        margin-right: 1rem;
+        color: white;
+        font-size: 2rem;
+    
+        &:hover {
+            color: $secondary-text-color;
+        }
+    }
+}
+
+.link {
+    cursor: pointer;
+}
+
+#image {
+    display: none;
+}
