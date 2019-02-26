@@ -22,7 +22,7 @@ After that is done, use **php artisan migrate** to make the migrations, then typ
    $user->save();
 ```
 
-Now type **php artisan server** head over to localhost:8000 and you will find it running.
+Now type **php artisan serve** head over to localhost:8000 and you will find it running.
 
 To edit the content simply head to localhost:8000/edit/login and enter your email and password and edit every page you want.
 
